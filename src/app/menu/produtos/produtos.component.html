@@ -1,0 +1,14 @@
+<h1>Área Administrativa</h1>
+<div class="card">
+    <div class="card-head"><p>Modulos Administrativos</p></div>
+    <div class="card-body">
+     <div class="corcunda">
+        <div class="caixa" *ngFor="let dados of dadosAdmin">
+            <a [routerLink]="dados.routerLink" class="sidenav-menu-link" >
+                <img src="{{dados.icon}}" class="sidenav-link-icon">
+                <span class="sidenav-link-text" >{{dados.name}}</span>
+            </a>
+        </div>
+     </div>
+    </div>
+</div>
