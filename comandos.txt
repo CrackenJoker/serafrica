@@ -1,0 +1,1 @@
+ng g module menu/produtos/views/produtos --route produtos --module app.module

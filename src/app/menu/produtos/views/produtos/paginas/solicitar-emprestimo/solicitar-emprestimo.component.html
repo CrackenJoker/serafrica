@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-head"><p>Solicitar Emprestimo</p></div>
+    <div class="card-body">
+     <div class="corcunda">
+            <div class="formulario">
+                <div class="funcionario">
+                    <label for="">Nome do funcionario</label>
+                    <div class="select">
+                        <select name="" id="">
+                            <option></option>
+                            <option value="" *ngFor="let d of dado">{{d.Nome}}</option>
+                        </select>    
+                    </div>
+
+                    <label for="">Finalidade do emprestimo</label>
+                    <div class="select">
+                        <input type="text" placeholder="Emprestimo">
+                    </div>
+                    <label for="">Quantiaa a emprestar</label>
+                    <input type="number" placeholder="Quantia">
+                    <button>Emprestar</button>
+                </div>
+            </div>
+     </div>
+    </div>
+</div>

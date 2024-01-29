@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-head"><p>Registrar Ocorrência</p></div>
+    <div class="card-body">
+     <div class="corcunda">
+            <div class="formulario">
+                <div class="funcionario">
+                    <label for="">Área de trabalho do funcionario</label>
+                    <div class="select">
+                        <select name="" id="">
+                            <option value="">Area de trabalho</option>
+                        </select>
+                    </div>
+                    
+                    <label for="">Nome do funcionario</label>
+                    <div class="select">
+                        <select name="" id="">
+                            <option></option>
+                            <option value="" *ngFor="let d of dados">{{d.Nome}}</option>
+                        </select>    
+                    </div>
+
+                    <label for="">Tipo de Ocorrência</label>
+                    <div class="select">
+                        <select name="" id="">
+                            <option value="">Ocorrência</option>
+                            <option value="">Outro</option>
+                        </select>    
+                    </div>
+                    <label for="">Nome da ocorrencia</label>
+                    <input type="text" placeholder="Ocorrência">
+                    <button>Registrar</button>
+                </div>
+            </div>
+     </div>
+    </div>
+</div>

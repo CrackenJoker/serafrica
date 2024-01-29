@@ -42,17 +42,23 @@ export class SidenavComponent implements OnInit{
   collapsed = false
   screenWidth=0
   navData = navDataMenu
-  @HostListener('window:resize',['$event'])
-  onResize(event:any){
-    this.screenWidth=window.innerWidth
-    if(this.screenWidth <=768){
-      this.collapsed = false
-      this.sideMenu.emit({screenWidth:this.screenWidth,collapsed:this.collapsed})
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    if (typeof window !== 'undefined') {
+      this.screenWidth = window.innerWidth;
+  
+      if (this.screenWidth <= 768) {
+        this.collapsed = false;
+        this.sideMenu.emit({ screenWidth: this.screenWidth, collapsed: this.collapsed });
+      }
     }
   }
+  
   ngOnInit(): void {
     this.screenWidth = window.innerWidth
   }
+  
+  
   abrirMenu():void{
     this.collapsed = !this.collapsed;
     this.sideMenu.emit({screenWidth:this.screenWidth,collapsed:this.collapsed})
