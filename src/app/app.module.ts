@@ -12,6 +12,7 @@ import { PagesComponent } from './menu/pages/pages.component';
 import { MidiaComponent } from './menu/midia/midia.component';
 import { DefinicaoComponent } from './menu/definicao/definicao.component';
 import { DashboardComponent } from './menu/dashboard/dashboard.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { DashboardComponent } from './menu/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [
     provideClientHydration()

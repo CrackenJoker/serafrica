@@ -9,11 +9,51 @@
     </div>
     <ul class="sidenav-menu">
         <li class="sidenav-menu-item" *ngFor="let dados of navData">
-            <a 
-            [routerLink]="[dados.routerLink]" class="sidenav-menu-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <i class="sidenav-link-icon" [class]="dados.icon"></i>
-                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{dados.label}}</span>
-            </a>
-        </li>
+            @if (dados.routerLink == 'dashboard'){
+                <div ngbDropdown class="d-inline-block">
+                    <a 
+                    [routerLink]="[dados.routerLink]" 
+                    class="sidenav-menu-link" routerLinkActive="active" 
+                    [routerLinkActiveOptions]="{exact:true}">
+                
+                        <i class="sidenav-link-icon" [class]="dados.icon"></i>
+                        <button type="button" class="btn btn-outline-primary sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                            {{dados.label}}
+                        </button>
+                    </a>
+                </div>
+            }
+            @if(dados.routerLink !== 'dashboard'){
+                <div ngbDropdown class="d-inline-block">
+                    <a 
+                     [routerLink]="[dados.routerLink]" *ngIf="dados.routerLink !=='dashboard'"
+                     class="sidenav-menu-link" routerLinkActive="active" 
+                     [routerLinkActiveOptions]="{exact:true}">
+                 <!--btn-outline-primary-->
+                         <i class="sidenav-link-icon" [class]="dados.icon" *ngIf="dados.icon !=='fal fa-home'"></i>
+                         <button type="button" class="btn btn-outline-primary sidenav-link-text" id="dropdownBasic1" ngbDropdownToggle
+                         @fadeInOut *ngIf="collapsed"
+                         >
+                             {{dados.label}}
+                         </button>
+                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                             <button ngbDropdownItem>Action - 1</button>
+                             <button ngbDropdownItem>Another Action</button>
+                             <button ngbDropdownItem>Something else is here</button>
+                         </div>
+                     </a>
+                     
+                     
+                 </div>
+             
+            }
+                
+
+            
+       
+          </li>
+               
+            
+        
     </ul>
 </div>
